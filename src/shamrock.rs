@@ -18,15 +18,22 @@ pub struct Shamrock {
 }
 
 impl Shamrock {
-    pub fn new(name: String) -> Self {
+    pub fn new(
+        name: String,
+        description: String,
+        version: String,
+        author: String,
+        author_uri: String,
+        license: String,
+    ) -> Self {
         Self {
             filename: format!("{}.php", name.to_kebab_case()),
             plugin_name: name.to_title_case(),
-            description: String::from(""),
-            version: String::from("0.1.0"),
-            author: String::from("Nathan Knowler"),
-            author_uri: String::from("https://knowlerkno.ws"),
-            license: String::from("MIT License"),
+            description,
+            version,
+            author,
+            author_uri,
+            license,
             text_domain: name.to_kebab_case(),
         }
     }
